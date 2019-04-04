@@ -17,6 +17,8 @@
 
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/swiper.min.js"></script>
+    
+    <script type="text/javascript" src="js/jquery.maskedinput.min.js"></script>
 
 
 </head>
@@ -116,7 +118,7 @@
                         <!-- .header_top-center -->
 
                         <div class="header_contacts contacts-block">
-                            <a href="tel:+7 (812) 649-75-34" class="tel">+7 (812) 649-75-34</a>
+                            <div id="feedback-modal" class="modal-block tel">+7 (812) 649-75-34</div>
                             <div class="mode">
                                 <p>пн-пт 9:00-21:00</p>
                                 <p>сб-вс 10:00-20:00</p>
@@ -188,8 +190,8 @@
 
                         <div class="product_bottom fadeEl">
                             <div class="l-block">
-                                <a href="#" class="btn">Забронировать</a>
-                                <a href="#" class="plan">План этажа</a>
+                                <div id="feedback-modal" class="modal-block btn">Забронировать</div>
+                                <div id="video_modal" class="modal-block plan">План этажа</div>
                             </div>
                             <div class="r-block">
                                 <div class="old-price">2 790 000 <span class="size-smoll">руб.</span></div>
@@ -401,7 +403,7 @@
                             </div>
                         </div>
                         <!-- calculate-bottom -->
-                        <div class="btn-block"><a href="#" class="btn">Подать заявку на одобрение</a></div>
+                        <div class="btn-block"><div id="feedback-modal" class="modal-block btn">Подать заявку на одобрение</div></div>
                     </div>
                     <!-- calculate-top -->
 
@@ -429,7 +431,7 @@
                     </div>
                     <!-- .footer_menu -->
                     <div class="footer_contacts contacts-block">
-                        <a href="tel:+7 (812) 649-75-34" class="tel">+7 (812) 649-75-34</a>
+                        <div id="feedback-modal" class="modal-block tel">+7 (812) 649-75-34</div>
                         <a href="mailto:info@site.ru" class="mail">info@site.ru</a>
                     </div>
                     <!-- .contacts-block -->
@@ -439,6 +441,66 @@
         </footer>
     </div>
     <!--/Main-->
+    
+    
+    <!-- MODAL -->
+        <div class="modal" data-id="#feedback-modal">
+            <div class="modal-ov ov-black"></div>
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                
+                <div class="feedback_form">
+                    <div class="tit">Заказать обратный звонок</div>
+                    <p>Оставьте заявку и наш менеджер свяжется<br/>с вами в течение 30 минут</p>
+                    <form action="" method="post">
+                        <div class="item-form">
+                            <input type="text" class="input-form" placeholder="Ваше имя"/> 
+                        </div>
+                        <div class="item-form">
+                            <input id="phone" type="text" class="input-form" placeholder="Номер телефона"/> 
+                        </div>
+                        <div class="btn-block"><button class="btn">Перезвоните мне</button></div>
+                    </form>
+                </div><!-- .feedback_form -->
+                <script>
+					$(function(){
+					  $("#phone").mask("8(999) 999-9999");
+					});
+				</script>
+            </div>
+        </div>
+        
+     <!-- MODAL-->
+            <div class="modal" data-id="#video_modal">
+                <div class="modal-ov"></div>
+                <div class="modal-content">
+                    <span class="close  close-v">&times;</span>
+                    <div class="video-block">
+                        <div class="video-palay"><img src="img/ico/video.png" alt="" /></div>
+                        <div class="video-pause"><img src="img/ico/pause-button.svg" alt="" /></div>
+                        <video muted="muted" id="video-m">
+                            <source src="img/video.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+                        </video>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                $(document).on("ready", function() {
+                    var modVideo = document.getElementById("video-m");
+                    $(".close-v").click(function() {
+                        modVideo.pause();
+                    });
+                    $(".video-palay").click(function() {
+                        modVideo.play();
+                        $(".video-block").addClass('pause');
+                    });
+                    $(".video-pause").click(function() {
+                        modVideo.pause();
+                        $(".video-block").removeClass('pause');
+                    });
+                });
+            </script>   
 
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/ion.rangeSlider.js"></script>
