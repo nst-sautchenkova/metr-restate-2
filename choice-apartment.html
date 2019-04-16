@@ -144,13 +144,14 @@
                         </div>
 
                         <div id="menu-filter" class="fadeEl choce-filter">
-                            <ul class="hList">
+                            
+                            <form class="form_select"><ul class="hList">
                                 <li class="menu_li li_select type-s">
                                     <div class="tit-choce"><span>Квартиры</span></div>
                                 </li>
 
                                 <li class="menu_li li_select room-select">
-                                    <form class="form_select">
+                                    
                                         <div>
                                             <select id="room" multiple="multiple">
                                                 <option>Студия</option>
@@ -160,7 +161,7 @@
                                                 <option>4 комнатная</option>
                                             </select>
                                         </div>
-                                    </form>
+                                  
                                     <script>
                                         $(function() {
                                             $('#room').multiselect({
@@ -174,7 +175,6 @@
                                 </li>
 
                                 <li class="menu_li li_select no-arrow">
-                                    <form class="form_select">
                                         <span class="tit">Цена</span>
                                         <div>
                                             <select id="price-ot">
@@ -188,7 +188,6 @@
                                                 <option>4,5 млн.руб.</option>
                                             </select>
                                         </div>
-                                    </form>
                                     <script>
                                         $(function() {
                                             $('#price-ot').multiselect({
@@ -198,8 +197,6 @@
                                     </script>
 
                                     <span class="dash">-</span>
-
-                                    <form class="form_select">
                                         <div>
                                             <select id="price-do">
                                                 <option selected disabled class="t-disabled">до</option>
@@ -212,7 +209,6 @@
                                                 <option>4,5 млн.руб.</option>
                                             </select>
                                         </div>
-                                    </form>
                                     <script>
                                         $(function() {
                                             $('#price-do').multiselect({
@@ -223,7 +219,6 @@
                                 </li>
 
                                 <li class="menu_li li_select">
-                                    <form class="form_select">
                                         <div>
                                             <select id="metro" multiple="multiple">
                                                 <option>Автово </option>
@@ -296,7 +291,6 @@
 
                                             </select>
                                         </div>
-                                    </form>
                                     <script>
                                         $(function() {
                                             $('#metro').multiselect({
@@ -310,7 +304,6 @@
                                 </li>
 
                                 <li class="menu_li li_select">
-                                    <form class="form_select">
                                         <div>
                                             <select id="region" multiple="multiple">
                                                 <option>Адмиралтейский </option>
@@ -333,7 +326,6 @@
                                                 <option>Центральный</option>
                                             </select>
                                         </div>
-                                    </form>
                                     <script>
                                         $(function() {
                                             $('#region').multiselect({
@@ -351,7 +343,6 @@
                                 <div class="flex">
                                     <div class="l-block">
                                         <div class="menu_li li_select">
-                                            <form class="form_select">
                                                 <div>
                                                     <select id="floor">
                                                         <option selected disabled class="t-tit">Этаж</option>
@@ -369,7 +360,6 @@
                                                         <option>12</option>
                                                     </select>
                                                 </div>
-                                            </form>
                                             <script>
                                                 $(function() {
                                                     $('#floor').multiselect({
@@ -381,7 +371,6 @@
                                         <!-- ITEM -->
 
                                         <div class="menu_li li_select">
-                                            <form class="form_select">
                                                 <div>
                                                     <select id="year">
                                                         <option selected disabled class="t-tit">Год сдачи</option>
@@ -393,7 +382,6 @@
                                                         <option>2018 г.</option>
                                                     </select>
                                                 </div>
-                                            </form>
                                             <script>
                                                 $(function() {
                                                     $('#year').multiselect({
@@ -405,7 +393,6 @@
                                         <!-- ITEM -->
 
                                         <div class="menu_li li_select">
-                                            <form class="form_select">
                                                 <div>
                                                     <select id="jk">
                                                         <option selected disabled class="t-tit">ЖК</option>
@@ -413,7 +400,6 @@
                                                         <option>ЖК “Звезды столиц”</option>
                                                     </select>
                                                 </div>
-                                            </form>
                                             <script>
                                                 $(function() {
                                                     $('#jk').multiselect({
@@ -430,6 +416,7 @@
                                     </div>
                                 </div>
                                 <!-- flex -->
+                                </form>
                             </div>
                             <!-- menu-filter_bottom -->
                         </div>
